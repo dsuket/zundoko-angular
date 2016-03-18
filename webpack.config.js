@@ -20,6 +20,7 @@ const config = {
     filename: '[name].js',
     publicPath: '/'
   },
+  devtool: 'cheap-module-eval-source-map',
   debug: isDev,
   // externals,
   resolve: {
