@@ -1,0 +1,39 @@
+{
+  "name": "ng-japan-example",
+  "version": "0.0.1",
+  "description": "ng-japan用のサンプルアプリケーション",
+  "author": "Shumpei Shiraishi <s@openweb.co.jp>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "webpack-dev-server",
+    "typings": "typings",
+    "webpack": "webpack"
+  },
+  "dependencies": {
+    "angular2": "2.0.0-beta.9",
+    "autoprefixer": "^6.3.3",
+    "core-js": "^2.1.5",
+    "html-webpack-plugin": "^2.10.0",
+    "ie-shim": "^0.1.0",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.5.15"
+  },
+  "devDependencies": {
+    "es6-promise": "^3.1.2",
+    "es6-shim": "^0.33.3",
+    "es7-reflect-metadata": "^1.6.0",
+    "awesome-typescript-loader": "^0.16.0-rc.0",
+    "css-loader": "^0.23.1",
+    "ie-shim": "^0.1.0",
+    "raw-loader": "0.5.1",
+    "rimraf": "^2.5.2",
+    "style-loader": "^0.13.0",
+    "tslint": "^3.5.0",
+    "tslint-loader": "^2.1.3",
+    "typescript": "~1.8.7",
+    "typings": "^0.7.8",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
