@@ -11,7 +11,7 @@ import * as Rx from 'rxjs';
     <h1>{{title}}</h1>
     <h2>My Heroes</h2>
     <ul class="heroes">
-      <li *ngFor="#hero of heroes"
+      <li *ngFor="#hero of heroes | async"
         [class.selected]="hero === selectedHero"
         (click)="onSelect(hero)">
         <span class="badge">{{hero.id}}</span> {{hero.name}}
@@ -24,15 +24,12 @@ import * as Rx from 'rxjs';
 })
 export class AppComponent implements OnInit {
   public title = 'Tour of Heroes';
-  heroes: Hero[];
+  heroes: Rx.Observable<Hero[]>;
   selectedHero: Hero;
 
   constructor(private _heroService: HeroService) {}
   loadHeroes() {
-    this._heroService.getHeroes().toArray().subscribe(data => {
-      console.log('next:', data);
-      this.heroes = data;
-    });
+    this.heroes = this._heroService.getHeroes().toArray();
   }
   ngOnInit() {
     this.loadHeroes();
