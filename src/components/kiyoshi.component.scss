@@ -1,0 +1,97 @@
+.kiyoshi-check {
+  padding: 10px;
+}
+.form-panel {
+  margin: 20px;
+}
+.zundoko-container {
+}
+.zundoko-item {
+  display: inline-block;
+  padding: 0 4px;
+}
+.kiyoshi {
+  font-weight: bold;
+  font-size: 150%;
+  color: red;
+}
+
+@mixin rank-0 {
+  font-weight: normal;
+  font-size: 100%;
+}
+@mixin rank-1 {
+  font-weight: normal;
+  font-size: 100%;
+}
+@mixin rank-2 {
+  font-weight: normal;
+  font-size: 110%;
+}
+@mixin rank-3 {
+  font-weight: bold;
+  font-size: 120%;
+}
+@mixin rank-4 {
+  font-weight: bold;
+  font-size: 130%;
+}
+@mixin rank-5 {
+  font-weight: bold;
+  font-size: 140%;
+}
+
+.rank-0 {
+  background-color: #FFF;
+  .zundoko-item:last-child {
+    @include rank-0;
+  }
+}
+.rank-1 {
+  background-color: #FFF;
+  .zundoko-item:last-child {
+    @include rank-1;
+  }
+}
+.rank-2 {
+  background-color: #FFF;
+  .zundoko-item:last-child {
+    @include rank-2;
+  }
+}
+.rank-3 {
+  background-color: #FFC;
+  .zundoko-item:nth-last-child(2) {
+    @include rank-2;
+  }
+  .zundoko-item:last-child {
+    @include rank-3;
+  }
+}
+.rank-4 {
+  background-color: #FF6;
+  .zundoko-item:nth-last-child(3) {
+    @include rank-2;
+  }
+  .zundoko-item:nth-last-child(2) {
+    @include rank-3;
+  }
+  .zundoko-item:last-child {
+    @include rank-4;
+  }
+}
+.rank-5 {
+  background-color: #FF3;
+  .zundoko-item:nth-last-child(4) {
+    @include rank-2;
+  }
+  .zundoko-item:nth-last-child(3) {
+    @include rank-3;
+  }
+  .zundoko-item:nth-last-child(2) {
+    @include rank-4;
+  }
+  .zundoko-item:last-child {
+    @include rank-5;
+  }
+}
