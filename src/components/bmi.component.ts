@@ -25,14 +25,12 @@ import {BmiModel} from "./bmi.model";
       <h2>BMI is {{model.bmi}}</h2>
     </div>
   `,
-  // directives: [HeroDetailComponent],
-  // providers: [HeroService]
+  providers: [BmiModel]
 })
 
 export class BmiComponent {
-  model = new BmiModel(60, 170);
 
-  constructor() {
+  constructor(private model: BmiModel) {
   }
 
 }
