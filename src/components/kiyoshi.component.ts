@@ -31,6 +31,8 @@ export class KiyoshiComponent {
   private stop$;
 
   // view properties
+  private rank = 0;
+  private speed = 400;
   private showKiyoshi = false;
   private subscription;
   private items = [];
@@ -56,7 +58,7 @@ export class KiyoshiComponent {
 
   createKiyoshiStream() {
     const zundokoStream = this.createZundokoStream();
-    return Rx.Observable.interval(400)
+    return Rx.Observable.interval(this.speed)
       .mergeMapTo(zundokoStream)
       .do(x => this.addItem(x))
       .bufferCount(5, 1)
@@ -69,15 +71,22 @@ export class KiyoshiComponent {
   }
   cleatItems() {
     this.items = [];
+    this.showKiyoshi = false;
+    this.rank = 0;
     this.updateItems$();
   }
 
   updateItems$() {
     const itemStream = Rx.Observable.fromArray(this.items);
+    itemStream.subscribe(x => {
+      console.log('x:', x);
+      if (x === 'ドコ') {
+        this.rank = 0;
+      } else {
+        this.rank = this.rank > 3 ? 4 : this.rank + 1;
+      }
+    });
     this.items$ = itemStream.toArray();
-    this.items$.subscribe(x => {
-        console.log('x:', x);
-      });
   }
 
   // start handler
@@ -99,7 +108,10 @@ export class KiyoshiComponent {
       .subscribe({
         next: () =>  {},
         error: err => console.log('Error: ', err),
-        complete: () => this.showKiyoshi = true,
+        complete: () => {
+          this.showKiyoshi = true;
+          this.rank = 5;
+        },
       });
   }
 
