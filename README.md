@@ -1,1 +1,4 @@
-## ng-japan-2016用のサンプル
+# Zundoko angular2
+
+
+Demo http://dsuket.github.io/zundoko-angular/dist/
