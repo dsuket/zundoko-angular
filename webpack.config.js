@@ -18,7 +18,7 @@ const config = {
   output: {
     path: `${__dirname}/dist`,
     filename: '[name].js',
-    publicPath: '/'
+    publicPath: './'
   },
   devtool: 'cheap-module-eval-source-map',
   debug: isDev,
