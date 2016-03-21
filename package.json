@@ -1,8 +1,8 @@
 {
-  "name": "ng-japan-example",
+  "name": "zundoko-angular",
   "version": "0.0.1",
-  "description": "ng-japan用のサンプルアプリケーション",
-  "author": "Shumpei Shiraishi <s@openweb.co.jp>",
+  "description": "Zundoko-kiyoshi by Angular2",
+  "author": "Daisuke.Takaoka",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist",
